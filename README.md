@@ -1,8 +1,11 @@
 # Contributors stats
 
-[![Build Status](https://travis-ci.org/mpapis/contributors_stats.png?branch=master)](https://travis-ci.org/mpapis/contributors_stats)
+[![Gem Version](https://badge.fury.io/rb/contributors_stats.png)](http://rubygems.org/gems/contributors_stats)
 [![Code Climate](https://codeclimate.com/github/mpapis/contributors_stats.png)](https://codeclimate.com/github/mpapis/contributors_stats)
+[![Coverage Status](https://coveralls.io/repos/mpapis/contributors_stats/badge.png?branch=master)](https://coveralls.io/r/mpapis/contributors_stats?branch=master)
+[![Build Status](https://travis-ci.org/mpapis/contributors_stats.png?branch=master)](https://travis-ci.org/mpapis/contributors_stats)
 [![Dependency Status](https://gemnasium.com/mpapis/contributors_stats.png)](https://gemnasium.com/mpapis/contributors_stats)
+[Documentation](http://rubydoc.info/gems/contributors_stats/frames)
 
 Update static files with contributors statistics.
 
