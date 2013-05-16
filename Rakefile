@@ -1,23 +1,20 @@
-require "rake/testtask"
-require "yard"
-require "yard/rake/yardoc_task"
-
-Rake::TestTask.new do |t|
-  t.verbose = true
-  t.libs.push("test")
-  t.pattern = "test/**/*_test.rb"
+task :test do
+  $LOAD_PATH.unshift('lib', 'test')
+  Dir.glob('./test/**/*_test.rb') { |f| require f }
 end
 
-YARD::Rake::YardocTask.new do |t|
-  t.before  = Proc.new do
-    puts "\n[YARD] Generating documentation\n\n"
-  end
-  t.files   = ['lib/**/*.rb']
-  # --quiet / --verbose =>
-  t.options = ['--quiet', '--list-undoc', '--compact', '--verbose']
+task :yard do
+  at_exit {
+    require 'yard'
+    require 'yard/cli/yardoc'
+    require 'yard/cli/stats'
+    YARD::CLI::Yardoc.new.run("--no-stats", "lib/**/*.rb")
+    YARD::CLI::Stats.new.run("--list-undoc", "--compact")
+  }
 end
 
-task :default => [:test, :yard]
+# reversed order for at_exit
+task :default => [:yard, :test]
 
 task :example_data do
   require "example_data"
