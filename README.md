@@ -11,10 +11,10 @@ Update static files with contributors statistics.
 
 * Static content update of contributors statistics.
 * Plugable:
-** backends to load data
-** user details calculation
-** output fomratters
-** target files updating
+ * backends to load data
+ * user details calculation
+ * output fomratters
+ * target files updating
 
 ## Usage
 
